@@ -1,9 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo;
+};
 
-function About({}: Props) {
+function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -25,7 +29,7 @@ function About({}: Props) {
         }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        src="/Ramakrishna-Pic.jpg"
+        src={urlFor(pageInfo?.profilePic).url()}
         className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[500px]"
       />
 
@@ -37,14 +41,15 @@ function About({}: Props) {
         </h4>
 
         <p className="text-sm">
-          I am Ramakrishna, I love to learn new technologies and build new
+          {pageInfo?.backgroundInformation}
+          {/* I am Ramakrishna, I love to learn new technologies and build new
           useful product. Lorem ipsum dolor, sit amet consectetur adipisicing
           elit. Ab illum nisi cum atque, veritatis libero minus facilis
           praesentium! Numquam ipsum non, ratione sit quia dicta at ab quo sequi
           modi! Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Voluptas sit suscipit beatae nobis quaerat autem, est doloribus minima
           vel quo blanditiis natus ex! Quidem quibusdam unde veniam, laborum
-          impedit porro.
+          impedit porro. */}
         </p>
       </div>
     </motion.div>
