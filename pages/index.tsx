@@ -9,6 +9,7 @@ import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import WorkExperience from "../components/WorkExperience";
+import { urlFor } from "../sanity";
 import { Experience, PageInfo, Project, Skill, Social } from "../typings";
 import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
@@ -71,7 +72,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
           <div className="flex items-center justify-center">
             <img
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-              src="https://i.imgur.com/e2yvD6A.png"
+              src={urlFor(pageInfo?.heroImage).url()}
               alt=""
             />
           </div>
@@ -83,7 +84,8 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+export async function getStaticProps() {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperiences();
   const skills: Skill[] = await fetchSkills();
@@ -99,4 +101,4 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       socials,
     },
   };
-};
+}
