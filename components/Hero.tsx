@@ -13,13 +13,13 @@ type Props = {
 export default function Hero({ pageInfo }: Props) {
   const [text, count] = useTypewriter({
     words: [
-      `Hi, The Name's ${pageInfo?.name}`,
+      `Hi, ${pageInfo?.name} here`,
       "Developer.py",
       "#MLEnthusiast",
       "<TechIsLove/>",
     ],
     loop: true,
-    delaySpeed: 2000,
+    delaySpeed: 1000,
   });
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
@@ -33,7 +33,7 @@ export default function Hero({ pageInfo }: Props) {
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[15px]">
           {pageInfo?.role}
         </h2>
-        <h1 className="text-5xl lg:text-6xl font-semibold px-10">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold px-10">
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#F7AB0A" />
         </h1>
