@@ -25,7 +25,7 @@ function ExperienceCardOne({ experience }: Props) {
           <h4 className="text-xl md:text-4xl font-light font-stark">
             {experience.jobTitle}
           </h4>
-          <p className="font-bold font-stark text-2xl mt-1">
+          <p className="font-bold text-xl md:text-2xl font-stark mt-1">
             {experience.company}
           </p>
 

@@ -29,7 +29,7 @@ function WorkExperience({ experiences }: Props) {
               <ExperienceCardOne key={experience._id} experience={experience} />
               <ExperienceCardOne key={experience._id} experience={experience} />
               <ExperienceCardOne key={experience._id} experience={experience} />
-              <ExperienceCardOne key={experience._id} experience={experience} />
+              {/* <ExperienceCardOne key={experience._id} experience={experience} /> */}
             </>
           );
         })}

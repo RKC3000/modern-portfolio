@@ -25,7 +25,7 @@ function Skills({ skills }: Props) {
       </h3>
 
       {/* Map icons */}
-      <div className="grid grid-cols-3 gap-3 md:grid-cols-4 md:gap-5">
+      <div className="grid grid-cols-3 gap-3 md:grid-cols-8 md:gap-6">
         {skills?.slice(0, skills.length / 2).map((skill) => (
           <Skill key={skill._id} skill={skill} />
         ))}
